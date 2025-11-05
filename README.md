@@ -11,7 +11,7 @@ This repository contains  [OpenAPI](https://www.openapis.org/what-is-openapi) sp
 The repository currently contains specifications for:
 
 
-* [Business Messaging - WhatsApp API OpenAPI Specification](https://developers.facebook.com/docs/whatsapp/cloud-api)
+* [Business Messaging - WhatsApp API OpenAPI Specification](https://github.com/facebook/openapi/blob/main/business-messaging-api_v23.0.yaml)
 
 > [!IMPORTANT]
 > NOTE: Usage of the API are subject to additional Terms and Conditions.
