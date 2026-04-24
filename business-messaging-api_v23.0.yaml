@@ -3272,17 +3272,17 @@ components:
           - NONE
           description: 'The status of a display name associated with a specific phone number.
 
-            - APPROVED: The name has been approved. You can download your certificate now.
+            - APPROVED: The display name has been approved and is ready to use.
 
-            - AVAILABLE_WITHOUT_REVIEW: The certificate for the phone is available and display name is ready to use without review.
+            - AVAILABLE_WITHOUT_REVIEW: The display name is ready to use without review.
 
-            - DECLINED: The name has not been approved. You cannot download your certificate.
+            - DECLINED: The display name has not been approved.
 
-            - EXPIRED: Your certificate has expired and can no longer be downloaded.
+            - EXPIRED: The display name approval has expired.
 
-            - PENDING_REVIEW: Your name request is under review. You cannot download your certificate.
+            - PENDING_REVIEW: The display name is under review.
 
-            - NONE: No certificate is available.
+            - NONE: No display name verification request exists.
 
             '
           example: AVAILABLE_WITHOUT_REVIEW
@@ -15434,19 +15434,19 @@ paths:
 
         **Display Name Status:**
 
-        When requesting the `name_status` field, you''ll receive the current certification status:
+        When requesting the `name_status` field, you''ll receive the current verification status:
 
-        - **APPROVED**: Business name verified and certificate available for download
+        - **APPROVED**: Business display name has been verified and is ready to use
 
-        - **AVAILABLE_WITHOUT_REVIEW**: Certificate ready without additional review required
+        - **AVAILABLE_WITHOUT_REVIEW**: Display name is ready to use without additional review
 
-        - **DECLINED**: Business name verification rejected
+        - **DECLINED**: Business display name verification was rejected
 
-        - **EXPIRED**: Existing certificate has expired and needs renewal
+        - **EXPIRED**: Display name approval has expired
 
-        - **PENDING_REVIEW**: Name verification request is under review
+        - **PENDING_REVIEW**: Display name verification request is under review
 
-        - **NONE**: No certificate or verification request exists
+        - **NONE**: No display name verification request exists
 
 
         **Code Verification Status:**
@@ -15462,7 +15462,7 @@ paths:
 
         - Monitor phone number quality and delivery performance
 
-        - Check verification and certification status
+        - Check verification and display name status
 
         - Validate phone number configuration before sending messages
 
@@ -15515,7 +15515,7 @@ paths:
 
           **Available Fields:**
 
-          - `name_status`: Display name certification status for business verification
+          - `name_status`: Display name verification status
 
           - `code_verification_status`: Two-step verification status for the phone number
 
@@ -15525,17 +15525,17 @@ paths:
 
           **name_status** values:
 
-          - `APPROVED`: Business name approved, certificate available for download
+          - `APPROVED`: Display name approved and ready to use
 
-          - `AVAILABLE_WITHOUT_REVIEW`: Certificate ready without additional review
+          - `AVAILABLE_WITHOUT_REVIEW`: Display name ready without additional review
 
-          - `DECLINED`: Business name verification rejected
+          - `DECLINED`: Display name verification rejected
 
-          - `EXPIRED`: Certificate expired and needs renewal
+          - `EXPIRED`: Display name approval has expired
 
-          - `PENDING_REVIEW`: Name verification under review
+          - `PENDING_REVIEW`: Display name verification under review
 
-          - `NONE`: No certificate or verification request exists
+          - `NONE`: No display name verification request exists
 
 
           **code_verification_status** values:
