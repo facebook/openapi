@@ -8393,14 +8393,31 @@ components:
                 example: User Sheena Nelson changed from 16505551234 to 12195555358
               wa_id:
                 type: string
-                description: New WhatsApp user ID.
+                description: The user's WhatsApp ID. On user_changed_number messages this is the new phone number. Omitted when the user has no phone number visible to the business.
                 example: '12195555358'
               type:
                 type: string
                 enum:
                 - user_changed_number
-                description: Type of system message.
+                - user_changed_user_id
+                description: Type of system message. user_changed_number reports a change to the user's phone number and carries the new number. user_changed_user_id reports a change to the user's business-scoped user ID, with no phone number included.
                 example: user_changed_number
+              user_id:
+                type: string
+                description: The user's current business-scoped user ID (BSUID). Omitted when business-scoped user IDs are not enabled for the business.
+                example: US.13491208655302741918
+              parent_user_id:
+                type: string
+                description: The user's current business-scoped user ID (BSUID) scoped to the parent business portfolio. Omitted when the business is not onboarded to parent-scoped IDs.
+                example: US.ENT.506847293015824
+              previous_user_id:
+                type: string
+                description: The business-scoped user ID (BSUID) the user had before the change. Only sent on user_changed_user_id messages.
+                example: US.10230984751029384756
+              previous_parent_user_id:
+                type: string
+                description: The parent-scoped business-scoped user ID (BSUID) the user had before the change. Only sent on user_changed_user_id messages.
+                example: US.ENT.918273645500112
             required:
             - body
             - type
@@ -30522,6 +30539,30 @@ paths:
                             body: User Sheena Nelson changed from 16505551234 to 12195555358
                             wa_id: '12195555358'
                             type: user_changed_number
+                          type: system
+                      field: messages
+              User ID Changed System Message:
+                value:
+                  object: whatsapp_business_account
+                  entry:
+                  - id: '102290129340398'
+                    changes:
+                    - value:
+                        messaging_product: whatsapp
+                        metadata:
+                          display_phone_number: '15550783881'
+                          phone_number_id: '106540352242922'
+                        messages:
+                        - from: '16505551234'
+                          id: wamid.HBgLMTk4MzU1NTE5NzQVAgASGAoxMTgyMDg2MjY3AA==
+                          timestamp: '1750269342'
+                          system:
+                            body: User changed from US.10230984751029384756 to US.13491208655302741918
+                            type: user_changed_user_id
+                            user_id: US.13491208655302741918
+                            parent_user_id: US.ENT.506847293015824
+                            previous_user_id: US.10230984751029384756
+                            previous_parent_user_id: US.ENT.918273645500112
                           type: system
                       field: messages
               Group Create Message:
