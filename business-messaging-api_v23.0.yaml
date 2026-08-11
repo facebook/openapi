@@ -8412,11 +8412,11 @@ components:
                 example: US.ENT.506847293015824
               previous_user_id:
                 type: string
-                description: The business-scoped user ID (BSUID) the user had before the change. Only sent on user_changed_user_id messages.
+                description: The business-scoped user ID (BSUID) the user had before the change. Omitted when the previous BSUID is unavailable.
                 example: US.10230984751029384756
               previous_parent_user_id:
                 type: string
-                description: The parent-scoped business-scoped user ID (BSUID) the user had before the change. Only sent on user_changed_user_id messages.
+                description: The parent-scoped business-scoped user ID (BSUID) the user had before the change. Omitted when the previous parent BSUID is unavailable.
                 example: US.ENT.918273645500112
             required:
             - body
